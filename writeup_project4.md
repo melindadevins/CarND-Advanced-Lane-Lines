@@ -83,7 +83,10 @@ as shown in the following images. The alst one is S channel.
 
 ![alt Undistorted original image H][imageH] ![alt Undistorted original image L][imageL] ![alt Undistorted original image S][imageS]
 
-After the color transformation had been done, the combination of Sobel X and Sobel Y gradient was used.
+Then convert the image to HSV colorspace and apply color mask (yellow and white) to identify yellow or white lines.
+This is to overcome the problem that in a few video frames, it failed to detect the lane based on S channel alone when there was shadow on the road.
+
+After the color transformation had been done, the combination of Sobel X and Sobel Y gradient or color mask was used.
 
 The following image shows the binary image obtained with the combined gradient on S channel on the test images:
 
